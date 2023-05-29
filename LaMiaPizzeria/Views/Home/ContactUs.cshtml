@@ -1,0 +1,55 @@
+﻿@model UserMessages
+
+<div class="container pt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="row mb-5">
+                <div class="col-md-4 mr-auto">
+                    <h3 class="thin-heading upper-headers mb-4">Città</h3>
+                    <p>
+                        Via
+                        <br />
+                        Città, ZIP
+                    </p>
+                </div>
+                <div class="col-md-6 ml-auto">
+                    <h3 class="thin-heading upper-headers mb-4">Info Contatti</h3>
+                    <p>T: +0000000 <br> E: info@mywebsite.com</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    <h3 class="thin-heading upper-headers mb-4">Scrivici!</h3>
+                    <form asp-controller = "UserMessages" asp-action = "UserMessages" class="mb-5" method="post">
+                        @Html.AntiForgeryToken()
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <input asp-for = "Name" type="text" class="form-control" name="name" placeholder="Nome">
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <input asp-for = "Surname" type="text" class="form-control" name="surname" placeholder="Cognome">
+                                <span asp-validation-for="Surname" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-12 form-group mt-2">
+                                <input asp-for = "Email" type="text" class="form-control" name="email" placeholder="Email">
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 form-group pt-2">
+                                <textarea asp-for = "Message" type="text" class="form-control" name="message" id="message" cols="30" rows="2" placeholder="Messaggio"></textarea>
+                                <span asp-validation-for="Message" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 pt-2">
+                                <input type="submit" value="Invia" class="btn btn-dark rounded-0 py-2 px-4">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

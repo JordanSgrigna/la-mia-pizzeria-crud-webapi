@@ -1,0 +1,76 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+
+.navbar_shop_name{
+    line-height: 60;
+    vertical-align: middle;
+}
+
+.thin-heading {
+    font-weight: 300;
+    font-size: 40px;
+}
+
+.upper-headers {
+    font-family: "Oswald", sans-serif !important;
+    color: #000;
+    text-transform: uppercase;
+}
+
+.site-font {
+    font-family: "Oswald", sans-serif !important;
+    color: #000;
+    font-weight: 300;
+}
+
+.navbar_logo_rotation{
+    height: 60px;
+    animation: rotation 10s infinite linear;
+}
+
+.form-control:focus{
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 10px rgba(#000);
+}
+
+.details-img-wh{
+    width: 50px;
+    height: 50px;
+}
+
+.shows{
+    height: 800px;
+    overflow-y: auto;
+}
+
+.landing-page-img-wh{
+    max-width: 300px;
+    max-height: 150px;
+}
+
+card-wh{
+    max-height: 250px;
+    max-width: 200px;
+}
+
+
+@keyframes rotation {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(359deg);
+    }
+}
