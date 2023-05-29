@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace LaMiaPizzeria.Models
 {
@@ -12,6 +13,7 @@ namespace LaMiaPizzeria.Models
         [StringLength(50, ErrorMessage = "Il campo deve contenere meno di 50 caratteri")]
         public string Type { get; set; }
 
+        [JsonIgnore]
         public List<Pizza> Pizzas { get; set; }
 
         public PizzaCategory(string type)
