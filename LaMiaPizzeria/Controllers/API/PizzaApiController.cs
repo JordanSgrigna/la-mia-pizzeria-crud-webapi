@@ -56,7 +56,7 @@ namespace LaMiaPizzeria.Controllers.API
         }
 
         [HttpPost]
-        public IActionResult Create([FromBody] Pizza pizzaToAdd)
+        public IActionResult Create([FromBody]Pizza pizzaToAdd)
         {
             if (!ModelState.IsValid)
             {
