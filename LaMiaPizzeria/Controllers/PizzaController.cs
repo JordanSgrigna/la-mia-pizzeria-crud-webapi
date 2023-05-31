@@ -14,19 +14,7 @@ namespace LaMiaPizzeria.Controllers
         [Authorize]
         public IActionResult PizzaDetails(int id)
         {
-            using (PizzaShopContext db = new PizzaShopContext())
-            {
-                Pizza? pizzaDetails = db.Pizza.Where(pizza => pizza.Id == id).Include(pizza => pizza.Category).FirstOrDefault();
-
-                if(pizzaDetails != null)
-                {
-                    return View(pizzaDetails);
-                }
-                else
-                {
-                    return NotFound($"La pizza con id {id} non è stato trovato");
-                }
-            }
+           return View();
         }
 
         //CREATE

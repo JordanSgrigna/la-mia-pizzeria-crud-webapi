@@ -8,11 +8,7 @@ namespace LaMiaPizzeria.Controllers
     {
         public IActionResult Index()
         {
-            using (PizzaShopContext db = new PizzaShopContext())
-            {
-                List<Pizza> ourPizzas = db.Pizza.ToList();
-                return View(ourPizzas);
-            }
+            return View();
         }
     }
 }

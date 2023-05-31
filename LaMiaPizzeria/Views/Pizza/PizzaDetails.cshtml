@@ -1,20 +1,24 @@
-﻿@model Pizza
-
-<div class="container-fluid">
+﻿<div class="container-fluid">
     <div class="row">
-        <div class="col-12">
-            <h3 class="upper-headers text-center mt-4">Pizza: @Model.Name</h3>
-            <img src="@Model.ImageUrl" alt="@Model.Name" class="d-block m-auto border border-black" style="width: 250px" />
-            <p class="text-center mt-3 site-font">@Model.Description</p>
-            @if(Model.Category != null)
-            {
-                <p class="text-center site-font">@Model.Category.Type</p>
-            }
-            else
-            {
-                <p class="text-center site-font">Nessuna categoria associata</p>
-            }
+        <div class="col-12" id="pizza-details">
         </div>
     </div>
 </div>
+
+@section Scripts{
+    const url = window.location.href;
+    const indexOfLastSlash = url.lastIndexOf('/');
+    const id = url.substring(indexOfLastSlash + 1)
+
+    axios.get('/api/PizzaAPI/SearchById/' + id).then((result) => {
+        const pizza = result.data;
+
+        document.getElementById("pizza-details").innerHTML = `
+                <h3 class="upper-headers text-center mt-4">Pizza: ${pizza.name}</h3>
+                <img src=${pizza.imageUrl} alt="${pizza.name}" class="d-block m-auto border border-black" style="width: 250px" />
+                <p class="text-center mt-3 site-font">${pizza.description}</p>
+                <p class="text-center site-font">${pizza.categoryId}</p>
+                `
+    })
+}
 

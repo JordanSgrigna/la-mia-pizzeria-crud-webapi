@@ -35,11 +35,11 @@
         axios.get("https://localhost:7132/api/PizzaAPI/GetPizzas").then((result) => {
                 const listPizzas = result.data;
                 listPizzas.forEach(pizza => {
-                    document.getElementById("table").innerHTML = `
+                    document.getElementById("table").innerHTML += `
     <tr class="border-bottom border-black">
-        <td scope="row" class="site-font">${pizza.Id}</td>
+        <td scope="row" class="site-font">${pizza.id}</td>
         <td class="upper-headers">${pizza.name}</td>
-        <td><img src="${pizza.imageurl}" alt="Foto pizza {pizza.name}" height="150" width="150" /></td>
+        <td><img src=${pizza.imageUrl} alt="Foto pizza {pizza.name}" height="150" width="150" /></td>
         <td class="site-font">${pizza.price}</td>
         <td>
             <a class="btn btn-dark btn-sm rounded-0" href="/Pizza/PizzaDetails/${pizza.id}">
